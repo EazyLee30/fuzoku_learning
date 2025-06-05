@@ -6,7 +6,7 @@
 
 您可以通过以下链接访问已部署的应用：
 
-[https://anbxvwwi.manus.space](https://anbxvwwi.manus.space)
+[https://zvbaisoe.manus.space](https://zvbaisoe.manus.space)
 
 ## 应用特点
 
