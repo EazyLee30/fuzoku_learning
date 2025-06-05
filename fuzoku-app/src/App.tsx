@@ -70,10 +70,18 @@ const App: React.FC = () => {
             className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
             onClick={() => handleCourseSelect(course.id)}
           >
-            <div className="h-40 bg-gray-200 flex items-center justify-center">
-              <div className="text-2xl font-bold text-gray-400">
-                {course.image ? '图片' : '课程图片'}
-              </div>
+            <div className="h-40 bg-gray-200 flex items-center justify-center overflow-hidden">
+              {course.image ? (
+                <img 
+                  src={`https://picsum.photos/seed/${course.id}/400/300`} 
+                  alt={course.title.chinese} 
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="text-2xl font-bold text-gray-400">
+                  课程图片
+                </div>
+              )}
             </div>
             <div className="p-4">
               <h3 className="text-xl font-bold mb-2">
