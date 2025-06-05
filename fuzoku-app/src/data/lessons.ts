@@ -3,6 +3,7 @@ export interface Phrase {
   chinese: string;
   romaji: string;
   audio?: string;
+  perspective?: 'consumer' | 'provider' | 'both';
 }
 
 export interface Exercise {
@@ -78,6 +79,7 @@ export const courses: Course[] = [
             japanese: 'はじめまして',
             chinese: '初次见面',
             romaji: 'Hajimemashite',
+            perspective: 'both',
           },
           {
             japanese: '私の名前は〇〇です',
@@ -88,11 +90,24 @@ export const courses: Course[] = [
             japanese: 'よろしくお願いします',
             chinese: '请多关照',
             romaji: 'Yoroshiku onegaishimasu',
+            perspective: 'both',
           },
           {
             japanese: 'お会いできて嬉しいです',
             chinese: '很高兴见到你',
             romaji: 'Oai dekite ureshii desu',
+          },
+          {
+            japanese: '初めてです',
+            chinese: '我是第一次来',
+            romaji: 'Hajimete desu',
+            perspective: 'consumer',
+          },
+          {
+            japanese: '予約はしていません',
+            chinese: '我没有预约',
+            romaji: 'Yoyaku wa shite imasen',
+            perspective: 'consumer',
           },
         ],
         exercises: [
@@ -146,6 +161,7 @@ export const courses: Course[] = [
             japanese: 'いらっしゃいませ',
             chinese: '欢迎光临',
             romaji: 'Irasshaimase',
+            perspective: 'provider',
           },
           {
             japanese: 'ようこそ',
@@ -161,11 +177,48 @@ export const courses: Course[] = [
             japanese: 'こちらへどうぞ',
             chinese: '请这边走',
             romaji: 'Kochira e dōzo',
+            perspective: 'provider',
           },
           {
             japanese: 'ごゆっくりおくつろぎください',
             chinese: '请慢慢放松',
             romaji: 'Goyukkuri okutsurogi kudasai',
+          },
+          {
+            japanese: 'お待ちください',
+            chinese: '请稍等',
+            romaji: 'Omachi kudasai',
+            perspective: 'provider',
+          },
+          {
+            japanese: 'ご案内いたします',
+            chinese: '我来为您引路',
+            romaji: 'Go-annai itashimasu',
+            perspective: 'provider',
+          },
+          {
+            japanese: 'ご来店ありがとうございます',
+            chinese: '感谢您的光临',
+            romaji: 'Go-raiten arigatō gozaimasu',
+            perspective: 'provider',
+          },
+          {
+            japanese: 'ご予約はされていますか？',
+            chinese: '请问有预约吗？',
+            romaji: 'Go-yoyaku wa sarete imasu ka?',
+            perspective: 'provider',
+          },
+          {
+            japanese: 'かしこまりました',
+            chinese: '好的，明白了',
+            romaji: 'Kashikomarimashita',
+            perspective: 'provider',
+          },
+          {
+            japanese: 'お待たせいたしました',
+            chinese: '让您久等了',
+            romaji: 'Omatase itashimashita',
+            perspective: 'provider',
           },
         ],
         exercises: [
@@ -232,6 +285,30 @@ export const courses: Course[] = [
             chinese: '时间是多久',
             romaji: 'Jikan wa dono kurai desu ka',
           },
+          {
+            japanese: 'すみません、システムを説明していただけますか？',
+            chinese: '不好意思，能给我说明一下服务流程/规则吗？',
+            romaji: 'Sumimasen, shisutemu o setsumei shite itadakemasu ka?',
+            perspective: 'consumer',
+          },
+          {
+            japanese: 'この「基本コース」には何が含まれていますか？',
+            chinese: '这个"基本套餐"包含哪些内容？',
+            romaji: 'Kono "Kihon Kōsu" ni wa nani ga fukumarete imasu ka?',
+            perspective: 'consumer',
+          },
+          {
+            japanese: 'オプションはありますか？',
+            chinese: '有没有附加的可选服务？',
+            romaji: 'Opushon wa arimasu ka?',
+            perspective: 'consumer',
+          },
+          {
+            japanese: '指名料は別途かかりますか？',
+            chinese: '指名费是需要另外支付的吗？',
+            romaji: 'Shimei-ryō wa betto kakarimasu ka?',
+            perspective: 'consumer',
+          },
         ],
         exercises: [
           {
@@ -295,6 +372,36 @@ export const courses: Course[] = [
             chinese: '您有什么要求吗',
             romaji: 'Gokibō wa gozaimasu ka',
           },
+          {
+            japanese: 'こちらが料金表とコース内容になります',
+            chinese: '这边是价目表和服务项目内容',
+            romaji: 'Kochira ga ryōkinhyō to kōsu naiyō ni narimasu',
+            perspective: 'provider',
+          },
+          {
+            japanese: '基本コースには、シャワー、マッサージ、そして～分間のサービスが含まれております',
+            chinese: '基本套餐包含淋浴、按摩以及～分钟的服务',
+            romaji: 'Kihon kōsu ni wa, shawā, massāji, soshite ~ funkan no sābisu ga fukumarete orimasu',
+            perspective: 'provider',
+          },
+          {
+            japanese: 'こちらのリストをご覧ください',
+            chinese: '请看这份列表',
+            romaji: 'Kochira no risuto o goran kudasai',
+            perspective: 'provider',
+          },
+          {
+            japanese: 'ご希望のオプションがあればお申し付けください',
+            chinese: '如果有您想要的可选服务请告诉我',
+            romaji: 'Go-kibō no opushon ga areba o-mōshitsuke kudasai',
+            perspective: 'provider',
+          },
+          {
+            japanese: '指名される場合は別途指名料が必要となります',
+            chinese: '如果指名的话需要另外支付指名费',
+            romaji: 'Shimei sareru baai wa betto shimei-ryō ga hitsuyō to narimasu',
+            perspective: 'provider',
+          },
         ],
         exercises: [
           {
@@ -319,6 +426,127 @@ export const courses: Course[] = [
                 japanese: '这是8点的预约',
                 chinese: '这是8点的预约',
                 romaji: 'Zhè shì 8 diǎn de yùyuē',
+              },
+            ],
+            correctAnswer: 0,
+          },
+        ],
+      },
+      {
+        id: 'establishment-types',
+        title: {
+          japanese: '店舗の種類',
+          chinese: '场所类型',
+        },
+        description: {
+          japanese: '様々な風俗店の種類と特徴',
+          chinese: '各种风俗店的类型和特点',
+        },
+        perspective: 'both',
+        level: 'beginner',
+        phrases: [
+          {
+            japanese: 'ソープランド',
+            chinese: '泡泡浴',
+            romaji: 'Sōpurando',
+            perspective: 'both',
+          },
+          {
+            japanese: 'デリヘル (デリバリーヘルス)',
+            chinese: '上门健康服务 (外送型服务)',
+            romaji: 'Deriheru (Deribarī Herusu)',
+            perspective: 'both',
+          },
+          {
+            japanese: 'ホテヘル (ホテルヘルス)',
+            chinese: '酒店健康服务 (在酒店进行)',
+            romaji: 'Hoteheru (Hoteru Herusu)',
+            perspective: 'both',
+          },
+          {
+            japanese: 'メンズエステ',
+            chinese: '男性美容/按摩 (常含擦边服务)',
+            romaji: 'Menzu Esute',
+            perspective: 'both',
+          },
+          {
+            japanese: 'キャバクラ',
+            chinese: '陪酒俱乐部',
+            romaji: 'Kyabakura',
+            perspective: 'both',
+          },
+          {
+            japanese: '料金',
+            chinese: '费用',
+            romaji: 'Ryōkin',
+            perspective: 'both',
+          },
+          {
+            japanese: 'コース',
+            chinese: '套餐/服务项目',
+            romaji: 'Kōsu',
+            perspective: 'both',
+          },
+          {
+            japanese: 'システム',
+            chinese: '系统/规则/流程',
+            romaji: 'Shisutemu',
+            perspective: 'both',
+          },
+          {
+            japanese: '基本料金',
+            chinese: '基本费用',
+            romaji: 'Kihon ryōkin',
+            perspective: 'both',
+          },
+          {
+            japanese: '指名料',
+            chinese: '指名费',
+            romaji: 'Shimei-ryō',
+            perspective: 'both',
+          },
+          {
+            japanese: '延長料金',
+            chinese: '延长费用',
+            romaji: 'Enchō ryōkin',
+            perspective: 'both',
+          },
+          {
+            japanese: 'オプション',
+            chinese: '可选项目/附加服务',
+            romaji: 'Opushon',
+            perspective: 'both',
+          },
+          {
+            japanese: 'お風呂',
+            chinese: '浴室/洗澡',
+            romaji: 'Ofuro',
+            perspective: 'both',
+          },
+        ],
+        exercises: [
+          {
+            type: 'multiple-choice',
+            question: {
+              japanese: '「デリヘル」とは何ですか？',
+              chinese: '"デリヘル"是什么？',
+              romaji: '"Deriheru" to wa nan desu ka?',
+            },
+            options: [
+              {
+                japanese: '上门健康服务',
+                chinese: '上门健康服务',
+                romaji: 'Shàngmén jiànkāng fúwù',
+              },
+              {
+                japanese: '泡泡浴',
+                chinese: '泡泡浴',
+                romaji: 'Pàopào yù',
+              },
+              {
+                japanese: '陪酒俱乐部',
+                chinese: '陪酒俱乐部',
+                romaji: 'Péijiǔ jùlèbù',
               },
             ],
             correctAnswer: 0,
@@ -356,16 +584,19 @@ export const courses: Course[] = [
             japanese: 'もう少し強くお願いします',
             chinese: '请再用力一点',
             romaji: 'Mō sukoshi tsuyoku onegaishimasu',
+            perspective: 'consumer',
           },
           {
             japanese: 'もう少し優しくお願いします',
             chinese: '请再温柔一点',
             romaji: 'Mō sukoshi yasashiku onegaishimasu',
+            perspective: 'consumer',
           },
           {
             japanese: 'そこが気持ちいいです',
             chinese: '那里很舒服',
             romaji: 'Soko ga kimochi ii desu',
+            perspective: 'consumer',
           },
           {
             japanese: '少し休憩してもいいですか',
@@ -376,6 +607,72 @@ export const courses: Course[] = [
             japanese: '水を飲みたいです',
             chinese: '我想喝水',
             romaji: 'Mizu o nomitai desu',
+          },
+          {
+            japanese: 'マッサージ',
+            chinese: '按摩',
+            romaji: 'Massāji',
+            perspective: 'both',
+          },
+          {
+            japanese: 'シャワー',
+            chinese: '淋浴',
+            romaji: 'Shawā',
+            perspective: 'both',
+          },
+          {
+            japanese: '手コキ',
+            chinese: '手交',
+            romaji: 'Tekoki',
+            perspective: 'both',
+          },
+          {
+            japanese: 'フェラ',
+            chinese: '口交',
+            romaji: 'Fera',
+            perspective: 'both',
+          },
+          {
+            japanese: 'パイズリ',
+            chinese: '乳交',
+            romaji: 'Paizuri',
+            perspective: 'both',
+          },
+          {
+            japanese: '本番',
+            chinese: '本番行为 (性交)',
+            romaji: 'Honban',
+            perspective: 'both',
+          },
+          {
+            japanese: 'ここ',
+            chinese: '这里',
+            romaji: 'Koko',
+            perspective: 'both',
+          },
+          {
+            japanese: '気持ちいい',
+            chinese: '舒服',
+            romaji: 'Kimochi ii',
+            perspective: 'both',
+          },
+          {
+            japanese: 'オススメ',
+            chinese: '推荐',
+            romaji: 'Osusume',
+            perspective: 'both',
+          },
+          {
+            japanese: 'リラックスする',
+            chinese: '放松',
+            romaji: 'Rirakkusu suru',
+            perspective: 'both',
+          },
+          {
+            japanese: 'お好み',
+            chinese: '喜好',
+            romaji: 'Okonomi',
+            perspective: 'both',
           },
         ],
         exercises: [
@@ -439,11 +736,30 @@ export const courses: Course[] = [
             japanese: '力加減はいかがですか',
             chinese: '力度如何',
             romaji: 'Chikara kagen wa ikaga desu ka',
+            perspective: 'provider',
           },
           {
             japanese: '何かご要望はありますか',
             chinese: '有什么要求吗',
             romaji: 'Nanika goyōbō wa arimasu ka',
+          },
+          {
+            japanese: 'かしこまりました。これくらいでいかがですか？',
+            chinese: '好的。这样可以吗？',
+            romaji: 'Kashikomarimashita. Kore kurai de ikaga desu ka?',
+            perspective: 'provider',
+          },
+          {
+            japanese: '他にご希望はございますか？',
+            chinese: '还有其他的要求吗？',
+            romaji: 'Hoka ni go-kibō wa gozaimasu ka?',
+            perspective: 'provider',
+          },
+          {
+            japanese: 'はい、コースに含まれております。リラックスしてくださいね。',
+            chinese: '是的，包含在套餐里。请放松。',
+            romaji: 'Hai, kōsu ni fukumarete orimasu. Rirakkusu shite kudasai ne.',
+            perspective: 'provider',
           },
         ],
         exercises: [
@@ -455,6 +771,121 @@ export const courses: Course[] = [
               romaji: 'Rirakkusu shite kudasai',
             },
             correctAnswer: '请放松',
+          },
+        ],
+      },
+      {
+        id: 'comfort-boundaries',
+        title: {
+          japanese: '快適さと境界線の表現',
+          chinese: '表达舒适度与界限',
+        },
+        description: {
+          japanese: '快適さや不快感、境界線を表現する方法',
+          chinese: '如何表达舒适度、不适感和个人界限',
+        },
+        perspective: 'both',
+        level: 'intermediate',
+        phrases: [
+          {
+            japanese: '大丈夫です',
+            chinese: '没关系/可以/还好',
+            romaji: 'Daijōbu desu',
+            perspective: 'both',
+          },
+          {
+            japanese: '痛いです',
+            chinese: '疼/痛',
+            romaji: 'Itai desu',
+            perspective: 'consumer',
+          },
+          {
+            japanese: '苦手です',
+            chinese: '不擅长/不喜欢/有点抗拒',
+            romaji: 'Nigate desu',
+            perspective: 'consumer',
+          },
+          {
+            japanese: 'やめてください',
+            chinese: '请停止',
+            romaji: 'Yamete kudasai',
+            perspective: 'consumer',
+          },
+          {
+            japanese: 'もう少しゆっくり',
+            chinese: '再慢一点',
+            romaji: 'Mō sukoshi yukkuri',
+            perspective: 'consumer',
+          },
+          {
+            japanese: 'この程度で',
+            chinese: '这种程度就可以了',
+            romaji: 'Kono teido de',
+            perspective: 'consumer',
+          },
+          {
+            japanese: '確認する',
+            chinese: '确认',
+            romaji: 'Kakunin suru',
+            perspective: 'provider',
+          },
+          {
+            japanese: '気をつける',
+            chinese: '注意/小心',
+            romaji: 'Ki o tsukeru',
+            perspective: 'provider',
+          },
+          {
+            japanese: '無理なこと',
+            chinese: '不可能的事/过分的要求',
+            romaji: 'Muri na koto',
+            perspective: 'provider',
+          },
+          {
+            japanese: '断る',
+            chinese: '拒绝',
+            romaji: 'Kotowaru',
+            perspective: 'provider',
+          },
+          {
+            japanese: 'ご了承ください',
+            chinese: '请谅解/请知悉',
+            romaji: 'Go-ryōshō kudasai',
+            perspective: 'provider',
+          },
+          {
+            japanese: '不快です',
+            chinese: '不舒服/不愉快',
+            romaji: 'Fukai desu',
+            perspective: 'consumer',
+          },
+        ],
+        exercises: [
+          {
+            type: 'multiple-choice',
+            question: {
+              japanese: '「やめてください」の意味は何ですか？',
+              chinese: '"やめてください"是什么意思？',
+              romaji: '"Yamete kudasai" no imi wa nan desu ka?',
+            },
+            options: [
+              {
+                japanese: '请停止',
+                chinese: '请停止',
+                romaji: 'Qǐng tíngzhǐ',
+              },
+              {
+                japanese: '请继续',
+                chinese: '请继续',
+                romaji: 'Qǐng jìxù',
+              },
+              {
+                japanese: '请放松',
+                chinese: '请放松',
+                romaji: 'Qǐng fàngsōng',
+              },
+            ],
+            correctAnswer: 0,
           },
         ],
       },
@@ -509,6 +940,48 @@ export const courses: Course[] = [
             japanese: 'チップはいりますか',
             chinese: '需要小费吗',
             romaji: 'Chippu wa irimasu ka',
+          },
+          {
+            japanese: 'お会計',
+            chinese: '结账',
+            romaji: 'O-kaikei',
+            perspective: 'both',
+          },
+          {
+            japanese: '合計',
+            chinese: '合计',
+            romaji: 'Gōkei',
+            perspective: 'provider',
+          },
+          {
+            japanese: '～円です',
+            chinese: '是～日元',
+            romaji: '~ en desu',
+            perspective: 'provider',
+          },
+          {
+            japanese: '消費税込み',
+            chinese: '含消费税',
+            romaji: 'Shōhizei-komi',
+            perspective: 'provider',
+          },
+          {
+            japanese: 'カード',
+            chinese: '卡 (信用卡/借记卡)',
+            romaji: 'Kādo',
+            perspective: 'both',
+          },
+          {
+            japanese: '現金',
+            chinese: '现金',
+            romaji: 'Genkin',
+            perspective: 'both',
+          },
+          {
+            japanese: '領収書',
+            chinese: '收据/发票',
+            romaji: 'Ryōshūsho',
+            perspective: 'both',
           },
         ],
         exercises: [
@@ -577,6 +1050,54 @@ export const courses: Course[] = [
             japanese: 'さようなら',
             chinese: '再见',
             romaji: 'Sayōnara',
+          },
+          {
+            japanese: '今日はありがとうございました',
+            chinese: '今天非常感谢',
+            romaji: 'Kyō wa arigatō gozaimashita',
+            perspective: 'consumer',
+          },
+          {
+            japanese: '楽しかったです',
+            chinese: '我很开心/很愉快',
+            romaji: 'Tanoshikatta desu',
+            perspective: 'consumer',
+          },
+          {
+            japanese: 'また来ます',
+            chinese: '我会再来的',
+            romaji: 'Mata kimasu',
+            perspective: 'consumer',
+          },
+          {
+            japanese: 'お気に召しましたか？',
+            chinese: '您满意吗？',
+            romaji: 'O-ki ni meshimashita ka?',
+            perspective: 'provider',
+          },
+          {
+            japanese: 'またのお越しをお待ちしております',
+            chinese: '期待您的再次光临',
+            romaji: 'Mata no o-koshi o o-machi shite orimasu',
+            perspective: 'provider',
+          },
+          {
+            japanese: 'お忘れ物のないように',
+            chinese: '请检查不要遗留物品',
+            romaji: 'O-wasuremono no nai yō ni',
+            perspective: 'provider',
+          },
+          {
+            japanese: '気をつけてお帰りください',
+            chinese: '请路上小心/请慢走',
+            romaji: 'Ki o tsukete o-kaeri kudasai',
+            perspective: 'provider',
+          },
+          {
+            japanese: 'お時間です。お疲れ様でした。',
+            chinese: '时间到了。辛苦了。',
+            romaji: 'Ojikan desu. Otsukaresama deshita.',
+            perspective: 'provider',
           },
         ],
         exercises: [
